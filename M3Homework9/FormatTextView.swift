@@ -14,7 +14,7 @@ struct FormatTextView: View {
                 .number
                     .locale(Locale(identifier: "en_US"))
                     .grouping(.automatic)))
-        .font(.system(size: 11, weight: .light))
+        
     }
 }
 

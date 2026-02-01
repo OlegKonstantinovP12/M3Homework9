@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ConvertMenu: View {
     var isRotate: Bool = false
+    @State var convert: Double
    @State var balance: Double
     var body: some View {
         ZStack(alignment: .topLeading) {
@@ -69,7 +70,7 @@ struct ConvertMenu: View {
                     }
                     Spacer()
                     HStack(alignment: .bottom, spacing: 5) {
-                        Text("300.00")
+                        FormatTextView(balance: $convert)
                             .font(.system(size: 20, weight: .bold))
                         Text("USDT")
                             .font(.system(size: 11, weight: .light))
@@ -85,6 +86,7 @@ struct ConvertMenu: View {
                         Text("Balance")
                             .font(.system(size: 11, weight: .light))
                         FormatTextView(balance: $balance)
+                            .font(.system(size: 11, weight: .light))
                     }
                     Spacer()
                     if isRotate {
@@ -108,7 +110,7 @@ struct ConvertMenu: View {
                     }
                     
                 }
-                .frame(width: 200, alignment: .leading)
+                .frame(width: 205, alignment: .leading)
                 .padding(.bottom, 10)
                 .padding(.leading, 20)
             }
@@ -127,7 +129,7 @@ struct ConvertMenu: View {
 
 
 #Preview {
-        ConvertMenu(balance: 12788.65)
-//    ConvertMenu(isRotate: true, balance: 1.65)
-//        .foregroundStyle(.white)
+//        ConvertMenu(balance: 12788.65)
+    ConvertMenu(isRotate: true, convert: 300, balance: 1.65)
+        .foregroundStyle(.white)
 }

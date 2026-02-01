@@ -11,7 +11,7 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             VStack(spacing: -38) {
-                ConvertMenu(balance: 12788.56)
+                ConvertMenu(convert: 300, balance: 12788.56)
                     .foregroundStyle(.black)
                 Button {
                     //
@@ -36,7 +36,7 @@ struct ContentView: View {
                     }
                     
                 }
-                ConvertMenu(isRotate: true, balance: 1.65)
+                ConvertMenu(isRotate: true, convert: 1.37, balance: 1.65)
                     .foregroundStyle(.white)
                 
             }
